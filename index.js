@@ -22,6 +22,8 @@ inp.on("close", () => {
   let area = [5, 4, 10];
   let profitArray = [];
   let noOfAreaCounts = [];
+  
+  if (input > 3){
 
   for (let j = 0; j < area.length; j++) {
     for (let i = 1; input >= area[j] * i; i++) {
@@ -45,44 +47,53 @@ inp.on("close", () => {
 
   if (unique.length === areaType.length) {
     empty[uniIndex] = noOfAreaCounts[uniIndex];
+    console.log("Earnings: $" +maxEle);
     console.log(
       "T:" + empty[0] + " " + "P:" + empty[1] + " " + "C:" + empty[2]
     );
   }
 
   if (unique.length === 2) {
-    let firstIndex = profitArray.firstIndexOf(maxEle);
+    let firstIndex = profitArray.indexOf(maxEle);
     let lastIndex = profitArray.lastIndexOf(maxEle);
 
     empty[firstIndex] = noOfAreaCounts[firstIndex];
     empty[lastIndex] = noOfAreaCounts[lastIndex];
 
     if (maxEle === profitArray[0]) {
+        console.log("Earnings: $" +maxEle);
       console.log("T:" + empty[0] + " " + "P:" + "0" + " " + "C:" + "0");
     }
     if (maxEle === profitArray[1]) {
+        console.log("Earnings: $" +maxEle);
       console.log("T:" + "0" + " " + "P:" + empty[1] + " " + "C:" + "0");
     }
     if (maxEle === profitArray[3]) {
+        console.log("Earnings: $" +maxEle);
       console.log("T:" + "0" + " " + "P:" + "0" + " " + "C:" + empty[2]);
     }
   }
 
   if (unique.length === 1) {
     if (maxEle === profitArray[0]) {
+        console.log("Earnings: $" +maxEle);
       console.log(
         "T:" + noOfAreaCounts[0] + " " + "P:" + "0" + " " + "C:" + "0"
       );
     }
     if (maxEle === profitArray[1]) {
+        console.log("Earnings: $" +maxEle);
       console.log(
         "T:" + "0" + " " + "P:" + noOfAreaCounts[1] + " " + "C:" + "0"
       );
     }
     if (maxEle === profitArray[3]) {
+        console.log("Earnings: $" +maxEle);
       console.log(
         "T:" + "0" + " " + "P:" + "0" + " " + "C:" + noOfAreaCounts[2]
       );
     }
   }
+  }
+  else {console.log("Area should be more than 3");}
 });
